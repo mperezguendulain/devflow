@@ -5,7 +5,7 @@ export default function Home() {
     <Box>
       Hola
       <br />
-      <Typography>Hola</Typography>
+      <Typography fontFamily="var(--font-grotesk)">Hola</Typography>
       <br />
       <Button variant="contained">Hello world</Button>
     </Box>

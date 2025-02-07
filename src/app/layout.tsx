@@ -1,17 +1,22 @@
 import type { Metadata } from 'next';
 import { ThemeProvider } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { Roboto } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import { CssBaseline } from '@mui/material';
 
 import theme from '@/theme';
 import './globals.css';
 
-const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
+const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto'
+  weight: ['100', '200', '300', '400', '500', '700', '800', '900'],
+  variable: '--font-inter'
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-grotesk'
 });
 
 export const metadata: Metadata = {
@@ -29,7 +34,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
-      <body className={roboto.variable}>
+      <body className={`${inter.className} ${spaceGrotesk.variable}`}>
         <AppRouterCacheProvider>
           <CssBaseline />
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
