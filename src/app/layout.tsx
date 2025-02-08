@@ -5,8 +5,6 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 // Material UI
 import { Box, CssBaseline } from '@mui/material';
 
-import { Navbar } from '@/components/navigation/Navbar/Navbar';
-
 import { ThemeAppProvider } from '@/providers/ThemeAppProvider';
 
 import './globals.css';
@@ -49,7 +47,6 @@ export default function RootLayout({
                 width: '100vw'
               }}
             >
-              <Navbar />
               {children}
             </Box>
           </ThemeAppProvider>
