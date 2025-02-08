@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
-import { ThemeProvider } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Inter, Space_Grotesk } from 'next/font/google';
-import { CssBaseline } from '@mui/material';
 
-import theme from '@/theme';
+// Material UI
+import { Box, CssBaseline } from '@mui/material';
+
+import { Navbar } from '@/components/navigation/Navbar/Navbar';
+
+import { ThemeAppProvider } from '@/providers/ThemeAppProvider';
+
 import './globals.css';
 
 const inter = Inter({
@@ -36,8 +40,19 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} ${spaceGrotesk.variable}`}>
         <AppRouterCacheProvider>
-          <CssBaseline />
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeAppProvider>
+            <CssBaseline />
+            <Box
+              sx={{
+                backgroundColor: 'background.default',
+                height: '100vh',
+                width: '100vw'
+              }}
+            >
+              <Navbar />
+              {children}
+            </Box>
+          </ThemeAppProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
