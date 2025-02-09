@@ -49,6 +49,21 @@ export const lightTheme = createTheme({
       secondary: '#555555',
       disabled: '#888888'
     }
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          textTransform: 'none'
+        },
+        outlined: {
+          textTransform: 'none'
+        },
+        text: {
+          textTransform: 'none'
+        }
+      }
+    }
   }
 });
 
@@ -99,6 +114,21 @@ export const darkTheme = createTheme({
       primary: '#ffffff',
       secondary: '#cccccc',
       disabled: '#888888'
+    }
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          textTransform: 'none'
+        },
+        outlined: {
+          textTransform: 'none'
+        },
+        text: {
+          textTransform: 'none'
+        }
+      }
     }
   }
 });

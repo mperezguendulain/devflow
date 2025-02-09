@@ -42,7 +42,6 @@ export default function RootLayout({
             <CssBaseline />
             <Box
               sx={{
-                backgroundColor: 'background.default',
                 height: '100vh',
                 width: '100vw'
               }}
