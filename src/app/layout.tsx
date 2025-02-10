@@ -6,6 +6,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import { Box, CssBaseline } from '@mui/material';
 
 import { ThemeAppProvider } from '@/providers/ThemeAppProvider';
+import { NotistackProvider } from '@/providers/NotistackProvider';
 
 import './globals.css';
 
@@ -46,7 +47,7 @@ export default function RootLayout({
                 width: '100vw'
               }}
             >
-              {children}
+              <NotistackProvider>{children}</NotistackProvider>
             </Box>
           </ThemeAppProvider>
         </AppRouterCacheProvider>

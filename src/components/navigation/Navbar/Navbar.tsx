@@ -1,13 +1,25 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { signOut, useSession } from 'next-auth/react';
 
 // Material UI
-import { Stack, Typography } from '@mui/material';
+import { Button, Stack, Typography } from '@mui/material';
 
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 
+// Constants
+import { ROUTES } from '@/constants/routes';
+
 export const Navbar = () => {
+  const { data: session } = useSession();
+  console.log({ session });
+
+  const handleLogout = () => {
+    signOut({
+      redirectTo: ROUTES.SIGN_IN
+    });
+  };
   return (
     <Stack
       direction="row"
@@ -47,7 +59,12 @@ export const Navbar = () => {
 
       <Typography variant="body2">Global search</Typography>
 
-      <ThemeSwitcher />
+      <Stack direction="row">
+        <ThemeSwitcher />
+        <Button variant="contained" onClick={handleLogout}>
+          Logout
+        </Button>
+      </Stack>
     </Stack>
   );
 };
