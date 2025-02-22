@@ -22,7 +22,6 @@ export const AuthThemedImage = () => {
         alt="Background"
         src={isDarkMode ? authDarkImg : authLightImg}
         placeholder="blur"
-        layout="fill"
         quality={100}
         fill
         sizes="100vw"

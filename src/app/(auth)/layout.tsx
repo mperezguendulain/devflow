@@ -27,7 +27,6 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
               <Typography variant="body2">
                 To get your questions answered
               </Typography>
-              {children}
             </Stack>
             <Image
               src="images/site-logo.svg"
@@ -36,6 +35,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
               height={50}
             />
           </Stack>
+          {children}
           <SocialAuthForm />
         </Stack>
       </Modal>
