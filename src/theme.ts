@@ -107,8 +107,8 @@ export const darkTheme = createTheme({
       dark: '#2e7d32'
     },
     background: {
-      default: '#1e1e1e',
-      paper: '#2d2d2d'
+      default: '#000000',
+      paper: '#0F1117'
     },
     text: {
       primary: '#ffffff',

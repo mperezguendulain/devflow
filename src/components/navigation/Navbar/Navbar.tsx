@@ -1,70 +1,73 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { signOut, useSession } from 'next-auth/react';
 
 // Material UI
-import { Button, Stack, Typography } from '@mui/material';
+import {
+  Paper,
+  Stack,
+  TextField,
+  Typography,
+  useMediaQuery,
+  useTheme
+} from '@mui/material';
 
+// Custom Components
 import { ThemeSwitcher } from './components/ThemeSwitcher';
-
-// Constants
-import { ROUTES } from '@/constants/routes';
+import { NavigationPanel } from './components/NavigationPanel/NavigationPanel';
 
 export const Navbar = () => {
-  const { data: session } = useSession();
-  console.log({ session });
+  const theme = useTheme();
+  const isMobileDevice = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const handleLogout = () => {
-    signOut({
-      redirectTo: ROUTES.SIGN_IN
-    });
-  };
   return (
-    <Stack
-      direction="row"
-      justifyContent="space-between"
-      alignItems="center"
-      sx={{ background: 'primary' }}
-    >
-      <Link
-        href="/"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          textDecoration: 'none'
-        }}
-      >
-        <Image
-          src="/images/site-logo.svg"
-          width={23}
-          height={23}
-          alt="DevFlow logo"
-        />
-        <Typography
-          fontFamily="var(--font-grotesk)"
-          color="text.primary"
-          variant="h5"
-          fontWeight="bold"
-          sx={(theme) => ({
-            [theme.breakpoints.down('sm')]: {
-              display: 'none'
-            }
-          })}
+    <Paper>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Link
+          href="/"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            textDecoration: 'none',
+            margin: '16px'
+          }}
         >
-          Dev<span style={{ color: 'orange' }}>Flow</span>
-        </Typography>
-      </Link>
+          <Image
+            src="/images/site-logo.svg"
+            width={23}
+            height={23}
+            alt="DevFlow logo"
+          />
+          <Typography
+            fontFamily="var(--font-grotesk)"
+            color="text.primary"
+            variant="h5"
+            fontWeight="bold"
+            sx={(theme) => ({
+              [theme.breakpoints.down('sm')]: {
+                display: 'none'
+              }
+            })}
+          >
+            Dev<span style={{ color: 'orange' }}>Flow</span>
+          </Typography>
+        </Link>
 
-      <Typography variant="body2">Global search</Typography>
+        <TextField
+          size="small"
+          label="Global search"
+          variant="outlined"
+          sx={{
+            width: '50%'
+          }}
+        />
 
-      <Stack direction="row">
-        <ThemeSwitcher />
-        <Button variant="contained" onClick={handleLogout}>
-          Logout
-        </Button>
+        <Stack direction="row">
+          <ThemeSwitcher />
+          {isMobileDevice && <NavigationPanel />}
+        </Stack>
       </Stack>
-    </Stack>
+    </Paper>
   );
 };
