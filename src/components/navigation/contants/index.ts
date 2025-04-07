@@ -47,3 +47,19 @@ export const sidebarLinks: SidebarLink[] = [
     label: 'Ask a question'
   }
 ];
+
+export const hotQuestions = [
+  { id: '1', title: 'How to create a custom hook in React?' },
+  { id: '2', title: 'How to use React Query?' },
+  { id: '3', title: 'How to use Redux?' },
+  { id: '4', title: 'How to use React Router?' },
+  { id: '5', title: 'How to use React Context?' }
+];
+
+export const popularTags = [
+  { id: '1', name: 'react', questions: 100 },
+  { id: '2', name: 'javascript', questions: 200 },
+  { id: '3', name: 'typescript', questions: 150 },
+  { id: '4', name: 'nextjs', questions: 50 },
+  { id: '5', name: 'react-query', questions: 75 }
+];

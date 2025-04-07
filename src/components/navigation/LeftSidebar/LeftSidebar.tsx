@@ -19,7 +19,7 @@ import {
 import { sidebarLinks } from '../contants';
 import { ROUTES } from '../contants/routes';
 
-export const Sidebar = () => {
+export const LeftSidebar = () => {
   const { status } = useSession();
   const theme = useTheme();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down('sm'));
@@ -43,7 +43,8 @@ export const Sidebar = () => {
       p={2}
       sx={{
         height: '100%',
-        width: displaySmallSidebar ? undefined : '250px'
+        width: displaySmallSidebar ? undefined : '250px',
+        overflow: 'auto'
       }}
       justifyContent="space-between"
       alignItems="center"

@@ -7,5 +7,6 @@ export const ROUTES = {
   JOBS: '/find-jobs',
   TAGS: '/tags',
   PROFILE: '/profile',
-  ASK_QUESTION: '/ask-a-question'
+  ASK_QUESTION: '/ask-a-question',
+  QUESTIONS: '/question'
 };
