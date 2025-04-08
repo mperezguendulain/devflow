@@ -1,3 +1,4 @@
+'use client';
 import { Button, styled } from '@mui/material';
 
 type NavigationButton = {

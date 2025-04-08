@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 // Material UI
 import {
+  Box,
   Paper,
   Stack,
-  TextField,
   Typography,
   useMediaQuery,
   useTheme
@@ -15,6 +15,7 @@ import {
 // Custom Components
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 import { NavigationPanel } from './components/NavigationPanel/NavigationPanel';
+import { QPSearchBox } from '@/components/filters/QPSearchBox/QPSearchBox';
 
 export const Navbar = () => {
   const theme = useTheme();
@@ -54,14 +55,12 @@ export const Navbar = () => {
           </Typography>
         </Link>
 
-        <TextField
-          size="small"
-          label="Global search"
-          variant="outlined"
-          sx={{
-            width: '50%'
-          }}
-        />
+        <Box width="50%">
+          <QPSearchBox
+            placeholder="Search anything globally..."
+            queryParamName="global"
+          />
+        </Box>
 
         <Stack direction="row">
           <ThemeSwitcher />
