@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Inter, Space_Grotesk } from 'next/font/google';
-
-// Material UI
 import { Box, CssBaseline } from '@mui/material';
 
+// Providers
 import { ThemeAppProvider } from '@/providers/ThemeAppProvider';
 import { NotistackProvider } from '@/providers/NotistackProvider';
 
@@ -43,8 +42,8 @@ export default function RootLayout({
             <CssBaseline />
             <Box
               sx={{
-                height: '100vh',
-                width: '100vw'
+                height: '100%',
+                width: '100%'
               }}
             >
               <NotistackProvider>{children}</NotistackProvider>

@@ -1,7 +1,5 @@
 import type { ReactNode } from 'react';
 import { SessionProvider } from 'next-auth/react';
-
-// Material UI
 import { Stack } from '@mui/material';
 
 // Custom Components
@@ -12,11 +10,17 @@ import { RightSidebar } from '@/components/navigation/RightSidebar/RightSidebar'
 export default function ProtectedLayout({ children }: { children: ReactNode }) {
   return (
     <SessionProvider>
-      <Stack height="100vh" sx={{ backgroundColor: 'background.default' }}>
+      <Stack
+        height="100%"
+        width="100%"
+        sx={{ backgroundColor: 'background.default' }}
+      >
         <Navbar />
-        <Stack direction="row" flexGrow={1} overflow="hidden">
+        <Stack direction="row" flexGrow={1} width="100%">
           <LeftSidebar />
-          <Stack flex={1}>{children}</Stack>
+          <Stack flex={1} width="100%">
+            {children}
+          </Stack>
           <RightSidebar />
         </Stack>
       </Stack>

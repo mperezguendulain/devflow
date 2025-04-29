@@ -48,7 +48,7 @@ export const RightSidebar = () => {
               }
             >
               <ListItemIcon
-                sx={{ color: index % 2 === 0 ? 'orange' : 'primary' }}
+                sx={{ color: index % 2 === 0 ? 'dforange.main' : 'primary' }}
               >
                 <QuizIcon />
               </ListItemIcon>

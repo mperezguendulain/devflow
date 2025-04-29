@@ -18,7 +18,6 @@ export const NavigationButton = styled(Button, {
 })<NavigationButton>(({ theme, active, onlyIcon }) => ({
   justifyContent: 'flex-start',
   alignItems: 'center',
-  minWidth: onlyIcon ? '0px' : undefined,
   padding: '16px',
   color: theme.palette.mode === 'dark' ? 'white' : 'black',
   ...(active && {
@@ -44,7 +43,6 @@ export const AuthButton = styled(Button, {
     background: theme.palette.mode === 'dark' ? '#151821' : '#DCE3F1',
     color: theme.palette.mode === 'dark' ? 'white' : '#212734'
   }),
-  minWidth: onlyIcon ? '0px' : undefined,
   ...(onlyIcon && {
     '& span': {
       marginRight: '0px',

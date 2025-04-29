@@ -49,19 +49,21 @@ export const LeftSidebar = () => {
       justifyContent="space-between"
       alignItems="center"
     >
-      {sidebarLinks.map((sbLink) => (
-        <NavigationButton
-          key={sbLink.route}
-          active={pathName === sbLink.route}
-          component={Link}
-          href={sbLink.route}
-          startIcon={<sbLink.IconComponent />}
-          onlyIcon={displaySmallSidebar}
-          fullWidth
-        >
-          {!displaySmallSidebar && sbLink.label}
-        </NavigationButton>
-      ))}
+      <Stack width="100%">
+        {sidebarLinks.map((sbLink) => (
+          <NavigationButton
+            key={sbLink.route}
+            active={pathName === sbLink.route}
+            component={Link}
+            href={sbLink.route}
+            startIcon={<sbLink.IconComponent />}
+            onlyIcon={displaySmallSidebar}
+            fullWidth
+          >
+            {!displaySmallSidebar && sbLink.label}
+          </NavigationButton>
+        ))}
+      </Stack>
 
       <Stack pt={2} gap={1} width="100%">
         {status === 'loading' ? null : status === 'authenticated' ? (

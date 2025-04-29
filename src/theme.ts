@@ -2,6 +2,24 @@
 // Material UI
 import { createTheme } from '@mui/material/styles';
 
+// Augment the palette to include an ochre color
+declare module '@mui/material/styles' {
+  interface Palette {
+    dforange: Palette['primary'];
+  }
+
+  interface PaletteOptions {
+    dforange?: PaletteOptions['primary'];
+  }
+}
+
+// Update the Button's color options to include an dforange option
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    dforange: true;
+  }
+}
+
 export const lightTheme = createTheme({
   cssVariables: true,
   typography: {
@@ -41,13 +59,16 @@ export const lightTheme = createTheme({
       dark: '#1b5e20'
     },
     background: {
-      default: '#e5e3e1',
+      default: '#FDFDFD',
       paper: '#ffffff'
     },
     text: {
       primary: '#333333',
       secondary: '#555555',
       disabled: '#888888'
+    },
+    dforange: {
+      main: '#FF7000'
     }
   },
   components: {
@@ -75,10 +96,10 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#88a6c0',
-      light: '#b3d1e8',
-      dark: '#49657e',
-      contrastText: '#ffffff'
+      main: '#151821',
+      light: '#1f2733',
+      dark: '#1f2733',
+      contrastText: '#7b8ec8'
     },
     secondary: {
       main: '#8a9465',
@@ -114,6 +135,9 @@ export const darkTheme = createTheme({
       primary: '#ffffff',
       secondary: '#cccccc',
       disabled: '#888888'
+    },
+    dforange: {
+      main: '#FF7000'
     }
   },
   components: {

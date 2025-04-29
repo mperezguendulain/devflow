@@ -23,7 +23,12 @@ export const Navbar = () => {
 
   return (
     <Paper>
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
+      <Stack
+        direction="row"
+        width="100%"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <Link
           href="/"
           style={{
