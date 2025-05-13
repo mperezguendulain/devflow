@@ -23,6 +23,7 @@ export const NavigationButton = styled(Button, {
   ...(active && {
     background: 'linear-gradient(93.22deg, #FF7000 -13.95%, #E2995F 99.54%)'
   }),
+  minWidth: onlyIcon ? '0px' : undefined,
   ...(onlyIcon && {
     '& span': {
       marginRight: '0px',
@@ -43,6 +44,7 @@ export const AuthButton = styled(Button, {
     background: theme.palette.mode === 'dark' ? '#151821' : '#DCE3F1',
     color: theme.palette.mode === 'dark' ? 'white' : '#212734'
   }),
+  minWidth: onlyIcon ? '0px' : undefined,
   ...(onlyIcon && {
     '& span': {
       marginRight: '0px',

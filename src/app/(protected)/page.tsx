@@ -58,7 +58,7 @@ export default function Home() {
   const filteredQuestions = questions;
 
   return (
-    <Stack p={3} sx={{ width: '100%', minWidth: 0 }}>
+    <Stack sx={{ width: '100%' }}>
       <Stack direction="row" justifyContent="space-between">
         <Typography variant="h5">All Questions</Typography>
         <DFMainButton component={Link} href={ROUTES.ASK_QUESTION}>

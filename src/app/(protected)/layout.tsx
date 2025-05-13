@@ -16,9 +16,9 @@ export default function ProtectedLayout({ children }: { children: ReactNode }) {
         sx={{ backgroundColor: 'background.default' }}
       >
         <Navbar />
-        <Stack direction="row" flexGrow={1} width="100%">
+        <Stack direction="row" flexGrow={1} width="100%" overflow="hidden">
           <LeftSidebar />
-          <Stack flex={1} width="100%">
+          <Stack flex={1} width="100%" p={3} minWidth={0}>
             {children}
           </Stack>
           <RightSidebar />

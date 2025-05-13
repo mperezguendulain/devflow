@@ -1,5 +1,6 @@
 'use client';
 import type { z, ZodType } from 'zod';
+import Link from 'next/link';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Controller,
@@ -8,13 +9,10 @@ import {
   type Path,
   useForm
 } from 'react-hook-form';
-
-// Material UI
 import { Button, Stack, TextField, Typography } from '@mui/material';
 
 // Utils
 import { capitalize } from '@/utils/strings';
-import Link from 'next/link';
 
 export type AuthType = 'SIGN_IN' | 'SIGN_UP';
 

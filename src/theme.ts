@@ -133,7 +133,7 @@ export const darkTheme = createTheme({
     },
     text: {
       primary: '#ffffff',
-      secondary: '#cccccc',
+      secondary: '#7B8EC8',
       disabled: '#888888'
     },
     dforange: {
